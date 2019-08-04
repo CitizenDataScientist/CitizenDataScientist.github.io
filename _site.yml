@@ -2,7 +2,7 @@ name: "CDS"
 title: "Citizen Data Scientist"
 description: |
   Citizen Data Scientist
-output_dir: "_site"
+output_dir: "."
 navbar:
   right:
     - text: "Home"
