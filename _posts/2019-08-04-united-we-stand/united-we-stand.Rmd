@@ -197,18 +197,18 @@ debates_words <- debates %>%
   filter(!str_detect(word, "[:punct:]"))
 ```
 
-```{r glimpse_data, echo=FALSE, layout="l-body"}
+```{r glimpse_data, echo=FALSE, layout="l-body-outset"}
 debates_words %>%
   # select the first thirteen rows (ie, tokens)
-  head(9) %>%
+  head(7) %>%
   # re-arrange columns
   select(session, year, country, speech, token = word) %>% 
   # show only the first 86 characters from the "speech" variable
-  mutate(speech = str_trunc(speech, 49)) %>%
+  mutate(speech = str_trunc(speech, 39)) %>%
   # feed the data to kable
   kable() %>% 
   # center the table and reduce the font size
-  kable_styling(position = "center")# , font_size = 9)
+  kable_styling(position = "center", font_size = 9)
 ```
 
 <aside>
