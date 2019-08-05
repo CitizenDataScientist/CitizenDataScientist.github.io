@@ -39,5 +39,5 @@ rsconnect/
 *.csv
 
 # superfluous files
-/_posts/
+#/_posts/
 /site_libs/
