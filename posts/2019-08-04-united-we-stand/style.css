@@ -1,0 +1,26 @@
+/* d-title h1 { */
+    /* grid-column: text; */
+    /* font-size: 40px; */
+    /* font-weight: 700; */
+    /* line-height: 1.1em; */
+    /* margin: 0 0 0.5rem; */
+	/* color: red; */
+/* } */
+
+.leaflet-container {
+    background: #f2f2ef;
+}
+
+.shiny-plot-output shiny-bound-output{
+  width: 1400px;
+  height: 1200px;
+}
+
+.shiny-bound-output{
+  width: 1400px;
+  height: 1200px;
+}
+
+body {
+  text-align: justify;
+}
