@@ -207,8 +207,8 @@ debates_words %>%
   mutate(speech = str_trunc(speech, 59)) %>%
   # feed the data to kable
   kable() %>% 
-  # center the table
-  kable_styling(position = "center")
+  # center the table and reduce the fontsize
+  kable_styling(position = "center", font_size = 11)
 ```
 
 <aside>
@@ -816,7 +816,12 @@ climate_window_new <- climate_window %>%
                         by = c("country" = "a3")),
             by = "country")
 
-# define set of speeches to highlight
+## gghighlight code ##
+# the .html file was rendered offline, for the subset of speeches listed below
+# said file was then edited manually: font family was changed and encoding issues fixed
+
+
+# define set of speeches to highlight 
 # highlight_speeches <- c(3875, # PNG 1996 - "risk of extiction"
 #                         4205, # MDV 1998 - "risk of extiction" pt.2
 #                         4998, # TUV 2002
