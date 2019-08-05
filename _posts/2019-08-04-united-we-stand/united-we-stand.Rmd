@@ -102,10 +102,10 @@ The original transcription of the UN General Debate text corpus was collected by
 
 The actual dataset used in this analysis was retrieved from Kaggle^[https://www.kaggle.com/unitednations/un-general-debates], uploaded and curated by Rachael Tatman to further include the complete text corpus of statements from 1970 (Session 25) to 2015 (Session 70). The data is contained in one master table, with the following fields:
 
-* **Session** : : General Assembly session number, from 25 to 70;
-* **Year** : : year of the corresponding session, from 1970 to 2015;
-* **Country** : : representatives' country code^[ISO 3166 Alpha-3 country code, more information in the following link: https://www.iso.org/iso-3166-country-codes.html];
-* **Text** : : complete text of each countries' statement at the UN General Debate, for every year in the dataset;
+* <p style="text-align:left;"> **Session** : : General Assembly session number, from 25 to 70;</p>
+* <p style="text-align:left;"> **Year** : : year of the corresponding session, from 1970 to 2015;</p>
+* <p style="text-align:left;"> **Country** : : representatives' country code^[ISO 3166 Alpha-3 country code, more information in the following link: https://www.iso.org/iso-3166-country-codes.html];</p>
+* <p style="text-align:left;"> **Text** : : complete text of each countries' statement at the UN General Debate, for every year in the dataset;</p>
 
 The analysis was conducted in **R**, following the _tidytext_ principles defined by Julia Silge and David Robinson in the book _"Text Mining with R"_ [@silge2016tidytext]. The R Markdown file containing the fully reproducible source code is hosted on Github.
 
@@ -301,7 +301,7 @@ speech_median_length %>%
   coord_flip() +
   # configure scales and set labels
   scale_y_continuous(breaks = seq(0, 12000, 2000), limits = c(0, 12500), expand = c(0, 0), labels = scales::comma_format()) +
-  labs(title = 'Top and bottom 8 countries, by median word count', subtitle = 'some countries go on forever, others not so much',
+  labs(title = 'Top and bottom 8 countries, sorted by median word count', subtitle = 'some countries go on forever, others not so much',
        x = '', y = 'word count') + 
   # plot-specific theme 
   theme(axis.ticks.x = element_blank(), 
