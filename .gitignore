@@ -40,3 +40,4 @@ rsconnect/
 
 # superfluous files
 /posts/
+/site_libs/
