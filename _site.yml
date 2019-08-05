@@ -2,6 +2,7 @@ name: "CDS"
 title: "Citizen Data Scientist"
 description: |
   Citizen Data Scientist
+base_url: "https://mil381.github.io/"
 output_dir: "."
 navbar:
   right:
