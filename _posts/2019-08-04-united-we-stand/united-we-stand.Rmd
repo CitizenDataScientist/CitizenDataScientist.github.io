@@ -114,7 +114,8 @@ The analysis was conducted in **R**, following the _tidytext_ principles defined
 This section encloses a selection of key summary metrics of the UN General Debate text corpus, allowing the reader to get acquainted with the dataset and establishing context to the analysis.
 
 ```{r import_data, message=FALSE, include=FALSE}
-# load the dataset into R
+# load the dataset into R (.csv is too big to upload to GitHub)
+# link: https://www.kaggle.com/unitednations/un-general-debates
 debates_raw <- read_csv("data/un-general-debates.csv")
 
 # copy raw data into a working data frame and perform some transformations
@@ -199,17 +200,19 @@ debates_words <- debates %>%
 ```{r glimpse_data, echo=FALSE, layout="l-body-outset"}
 debates_words %>%
   # select the first thirteen rows (ie, tokens)
-  head(13) %>%
+  head(9) %>%
   # re-arrange columns
-  select(session, year, country, speech, word) %>% 
+  select(session, year, country, speech, token = word) %>% 
   # show only the first 86 characters from the "speech" variable
-  mutate(speech = str_trunc(speech, 86)) %>%
+  mutate(speech = str_trunc(speech, 59)) %>%
   # feed the data to kable
-  kable()
+  kable() %>% 
+  # center the table
+  kable_styling(position = "center")
 ```
 
 <aside>
-_Tidytext_ data frame
+<p style="text-align:right;"> _Tidytext_ data frame</p>
 </aside>
 
 The evolution of speech length, measured as the word count of each county's statement, is presented in the graph below in the form of one box plot ^[the lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles). The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called "outlying" points and are plotted individually - from the ggplot2 reference guide: https://ggplot2.tidyverse.org/reference/geom_boxplot.html] per year. A smooth curve was fitted to the distribution, to assist the reader's interpretation of the trend.
@@ -306,7 +309,7 @@ speech_median_length %>%
 ```
 
 <aside>
-each dot represents a speech; median is depicted by the blue diamond
+<p style="text-align:right;">each dot represents a speech; median is depicted by the blue diamond</p>
 </aside>
 
 Cuba rounds off the top 5 of the most talkative countries, behind the former state of Czechoslovakia. Ireland emerges in first place, with the highest recorded median word count during the period comprised in the dataset. On the other end of the spectrum, the Southeast Asia nation of Brunei - admitted to the UN in 1984 - ranks as the country with the lowest speech median word count, having never delivered an address with more than 2000 words.
@@ -460,7 +463,7 @@ bigrams_decade %>%
 ```
 
 <aside>
-2010s: 2010 to 2015
+<p style="text-align:right;">2010s: 2010 to 2015</p>
 </aside>
 
 Now this is a rather interesting visualization. 
@@ -789,7 +792,7 @@ climate_window_highlight %>%
 ```
 
 <aside>
-Dutch speech delivered in 1989, the first to mention _climate change_ twice
+<p style="text-align:right;">Dutch speech delivered in 1989, the first to mention _climate change_ twice</p>
 </aside>
 
 ```{r sentimentr_generate_highlight, include=FALSE}
