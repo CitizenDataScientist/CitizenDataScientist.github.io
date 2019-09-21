@@ -1,7 +1,7 @@
 ---
 title: "United we Stand?"
 description: |
- The hot topic of **Climate Change**, through the lens of the **UN General Debate**
+ The hot topic of <strong>Climate Change</strong>, through the lens of the **UN General Debate**
 author:
   - name: Miguel Ramos Lopes 
     url: https://example.com/norajones
@@ -60,12 +60,11 @@ un_palette <- function(colour){
 }
 
 # Define and set custom ggplot theme 
-plot_bkgd <- "#f2f2ef"  # plot background colour #F3F3EF
+plot_bkgd <- "#f2f2ef"  # plot background colour
 plot_grid <- "#D0CEC5"  # plot girdlines colour
-plot_font <- "Lato"     # plot font family
 
-font_add_google(name = "Lato", family = "Lato")
-showtext_auto()
+# font_add_google(name = "Lato", family = "Lato")
+# showtext_auto()
 
 un_theme <- theme(text = element_text(family = "Lato", color = "#22211d"),
                   rect = element_rect(fill = plot_bkgd),
@@ -82,9 +81,9 @@ theme_set(theme_light(base_size = 22) + un_theme)
 # Context & Inspiration
 The United Nations General Assembly (UNGA) is the main deliberative, policy-making and representative body of the UN, being the only principal organ in which all member states have equal representation, consecrated in one vote per country^[the General Assembly’s composition, functions, powers, voting, and procedures are inscribed in Chapter IV of the United Nations Charter, available on this link: http://www.un.org/en/sections/un-charter/chapter-iv/index.html]. 
 
-Every year since the first session, held in 1946 with only 51 nations in attendance, representatives of UN member states gather at the annual sessions of the General Assembly. The centerpiece of the UNGA is the General Debate, a forum in which government officials and senior diplomats address the assembly in the form of a speech, delivering statements that reflect their country's perspective on pressing issues in foreign policy.  
+Every year since its first session, held in 1946 with only 51 nations in attendance, representatives of UN member states gather at the annual sessions of the General Assembly. The centerpiece of the UNGA is the General Debate, a forum in which government officials and senior diplomats address the assembly in the form of a speech, delivering statements that reflect their country's perspective on pressing issues in foreign policy.  
 
-Given the truly global nature of the UNGA, which congregates 193 countries and 2 permanent observer states^[full list of countries and observer states available on this link: http://www.un.org/en/member-states/index.html, including date of admission], the General Debate provides great insight into the affairs that shape contemporary diplomatic context, covering subjects that encompass poverty and economic growth, peace and security, Human Rights’ violations and threats to sustainable development. On this matter, given its sense of urgency stemming from the potential impact on the Earth's ecosystems, human health and civilization itself, climate change overshadows all other topics.
+Given the truly global nature of the UNGA, which congregates 193 countries and 2 permanent observer states^[full list of countries and observer states available on this link: http://www.un.org/en/member-states/index.html, including date of admission], the General Debate provides great insight into the affairs that shape the contemporary diplomatic context, covering subjects that encompass poverty and economic growth, peace and security, Human Rights’ violations and threats to sustainable development. On this matter, given its sense of urgency due to the potential impact on Earth's ecosystems, human health and civilization itself, climate change overshadows all other topics.
 
 While climate change is not new to the planet we inhabit, as stated in numerous scientific studies on global temperature change over documented climate cycles [@petit1999climate], the level of climate disruption stemming from human influence now threatens to introduce seemingly small but critical deviations from the stable regime that allowed human societies to develop and prosper.
 
@@ -215,7 +214,7 @@ debates_words %>%
 <p style="text-align:right;"> _Tidytext_ data frame</p>
 </aside>
 
-The evolution of speech length, measured as the word count of each county's statement, is presented in the graph below in the form of one box plot ^[the lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles). The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called "outlying" points and are plotted individually - from the ggplot2 reference guide: https://ggplot2.tidyverse.org/reference/geom_boxplot.html] per year. A smooth curve was fitted to the distribution, to assist the reader's interpretation of the trend.
+The evolution of speech length, measured as the word count of each country's statement, is presented in the graph below in the form of one box plot ^[the lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles). The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called "outlying" points and are plotted individually - from the ggplot2 reference guide: https://ggplot2.tidyverse.org/reference/geom_boxplot.html] per year. A smooth curve was fitted to the distribution, to assist the reader's interpretation of the trend.
 
 ```{r length_over_time, echo=FALSE, fig.height=8, fig.width=16, message=FALSE, dev='svg', layout="l-page"}
 speech_length <- debates_words %>%
@@ -718,7 +717,7 @@ Computational sentiment analysis is based on the premise that the **overall emot
 
 Cognizant of the relevance of said modifiers and the consequences that their omission might entail on the output of the analysis, Tyler Rinker developed the [**`SentimenR`** package](https://cran.r-project.org/web/packages/sentimentr/index.html) to compute text sentiment at sentence level in timely fashion, while incorporating the effect of  qualifiers - or **valence shifters**, as they are referred to by the author^[the author provides substantial evidence into the benefits of incorporating valence shifters, along with a comprehensive description of the algorithm’s inner workings on the package’s GitHub page – available on this link: https://github.com/trinker/sentimentr]. The output produced by **`SetitmentR`** is an _unbounded sentiment polarity score_ at sentence level, meaning that sentences are attributed a score ranging from negative to positive values, whose magnitude is proportional to how _polarizing_ the negative or positive sentiment conveyed by the sentence actually is. Sentences scored as 0 are considered to be _neutral_. 
 
-Concerning the task of confining the segments of each speech pertaining to climate change, the decision was made to extend the scope of the analysis to also include the subsequent sentence in the vicinity of those containing mentions of climate change. The outcome of this process, which effectively creates a _window of interest_ of two sentences per mention of climate change, is illustrated below^[rendered using the `ggpage` package - available on this link: https://emilhvitfeldt.github.io/ggpage/].
+Concerning the task of identifying the segments of speech to be considered in the sentiment analysis, the decision was made to restrict the scope to include only sentences containing mentions of climate change. This process, which effectively creates _window of interest_ composed by sentences explicitly pertaining to climate change, is illustrated below^[rendered using the `ggpage` package - available on this link: https://emilhvitfeldt.github.io/ggpage/].
 
 ```{r climate_window_page, echo=FALSE, fig.height=8, fig.width=16, dev='svg', layout="l-page"}
 # Window Function 
@@ -796,15 +795,15 @@ climate_window_highlight %>%
 </aside>
 
 ```{r sentimentr_generate_highlight, include=FALSE}
-climate_window_new <- climate_window %>% 
-  # filter(hit %in% c("match", "following")) %>% 
+climate_window_new <- climate_window %>%
   filter(hit %in% c("match")) %>% 
+  # add sentence-level polarity score to each speech 
   left_join(climate_window %>%
-              # filter(hit %in% c("match", "following")) %>% 
               filter(hit %in% c("match")) %>% 
               mutate(sentences_split = get_sentences(sentence)) %$%
               sentiment_by(sentences_split, list(speech_id), averaging.function = average_weighted_mixed_sentiment), 
             by = "speech_id") %>% 
+  # add the total number of mentions of Climate Chage to each country
   left_join(climate_change_mentions %>%
               arrange(desc(mentions)) %>%
               mutate(bin_mentions = cut(mentions,
@@ -822,31 +821,34 @@ climate_window_new <- climate_window %>%
 
 
 # define set of speeches to highlight 
-# highlight_speeches <- c(3875, # PNG 1996 - "risk of extiction"
-#                         4205, # MDV 1998 - "risk of extiction" pt.2
-#                         4998, # TUV 2002
-#                         5868, # LAO 2007
-#                         6186, # CAN 2009 
-#                         6595, # EU 2011 - lowest polarity score
-#                         7017, # KHM 2013 - highest polarity score
-#                         7443) # NLD 2015 - positive polarity (tech. transfer)
+highlight_speeches <- c(3875, # PNG 1996 - short negative statement
+                        5958, # VUT 2007 
+                        6373, 
+                        # 5868, # LAO 2007 - long positive statement
+                        6595, # EU  2011 - lowest polarity score
+                        7017  # KHM 2013 - highest polarity score
+                        )
 
 # generate .html with highlighted sentiment polarity + score
-# climate_window %>%
-#   filter(hit %in% c("match"), speech_id %in% highlight_speeches) %>%
-#   left_join(maps::iso3166 %>% select(a3, ISOname) %>% distinct(), by = c("country" = "a3")) %>%
-#   mutate(speech_id = paste(ISOname, year, sep = ", ")) %>%
-#   mutate(sentences_split = get_sentences(sentence)) %$%
-#   sentiment_by(sentences_split, by = list(speech_id), averaging.function = average_weighted_mixed_sentiment) %>%
-#   highlight(file = "sentence_highlight.html", open = FALSE)
+climate_window %>%
+  filter(hit %in% c("match"), speech_id %in% highlight_speeches) %>%
+  left_join(maps::iso3166 %>% select(a3, ISOname) %>% distinct(), by = c("country" = "a3")) %>%
+  mutate(speech_id = paste(ISOname, year, sep = ", ")) %>%
+  mutate(sentences_split = get_sentences(sentence)) %$%
+  sentiment_by(sentences_split, by = list(speech_id), averaging.function = average_weighted_mixed_sentiment) %>%
+  highlight(file = "sentence_highlight.html", open = FALSE)
 
-# take .png a snapshot of the hmtl url (edited offline)
+# take .png snapshot of the hmtl url (edited offline)
 # webshot::webshot(url = "sentence_highlight.html", file = "sentence_highlight.png", zoom = 2)
 ```
 
-**SentimentR**’s sentiment polarity algorithm was thus employed at sentence level within the speech segments enclosed in the _window of interest_. The overall polarity score of a country’s statement on climate change, issued on a particular year, was computed as the average value assigned to each individual sentence enclosed in the _window of interest_.  Five instances were chosen to portray the unbounded score attributed to the remarks concerning this topic, professed on five different sessions of the General Debate:
+**SentimentR**’s algorithm was thus employed at sentence level on the _window of interest_ of every speech. The overall polarity score of statements with more than one sentence enclosed in the _window of interest_ was computed as the average value assigned to each sentence. Five instances were chosen to portray the unbounded score attributed to the remarks concerning this topic, professed on five different sessions of the General Debate:
 
-* **Papua New Guinea, 1996** : : a _negative_ statement, scored as **-0.368**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
+* **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
+
+* **Maldives, 1998** : : a _negative_ statement, with an overall score of **-0.573** computed as the average sentiment polarity assigned to each of the four sentences that comprise the _window of interest_; 
+
+* **Tuvalu, 2002** : : a _negative_ statement, with an overall score of **-0.573** computed as the average sentiment polarity assigned to each of the four sentences that comprise the _window of interest_; 
 
 * **Marshall Islands, 2002** : : a _nuanced_ statement, scored as **-0.223**, in which the contribution of the _negative_ sentence overshadows that of the _positive_. The speaker reiterates that island nations such as the Marshall Islands face the _very threat of complete obliteration_, should the oceans rise by _even marginal levels_.;
 
