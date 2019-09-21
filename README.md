@@ -1,2 +1,2 @@
-# mil381.github.io
-source code for my blog
+# CitizenDataScientist.github.io
+Source code for my blog
