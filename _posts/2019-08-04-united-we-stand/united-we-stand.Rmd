@@ -91,7 +91,7 @@ Having established the significance of the statements delivered at the UN Genera
 
 * **How has the prevalence of the topic of climate change evolved over time?**
 * **Do all UN member states award equal importance to climate change?**
-* **Which _sentiments_ underlie the debate over the topic of climate change?**
+* **Which _sentiment_ underlies the debate over the topic of climate change?**
 
 Insights uncovered throughout the analysis will culminate with the assessment of one final landmark inquiry – _to what extent are the nations of the world truly united in the wake of the threat posed by climate change?_
 
@@ -106,7 +106,7 @@ The actual dataset used in this analysis was retrieved from Kaggle^[https://www.
 * <p style="text-align:left;"> **Country** : : representatives' country code^[ISO 3166 Alpha-3 country code, more information in the following link: https://www.iso.org/iso-3166-country-codes.html];</p>
 * <p style="text-align:left;"> **Text** : : complete text of each countries' statement at the UN General Debate, for every year in the dataset;</p>
 
-The analysis was conducted in **R**, following the _tidytext_ principles defined by Julia Silge and David Robinson in the book _"Text Mining with R"_ [@silge2016tidytext]. The R Markdown file containing the fully reproducible source code is hosted on Github.
+The analysis was conducted in **R**, following the _tidytext_ principles defined by Julia Silge and David Robinson in the book _"Text Mining with R"_ [@silge2016tidytext]. The R Markdown file containing the fully reproducible source code is hosted on [Github](https://github.com/CitizenDataScientist/CitizenDataScientist.github.io/tree/master/_posts).
 
 # Exploratory Analysis
 
@@ -819,24 +819,22 @@ climate_window_new <- climate_window %>%
 # the .html file was rendered offline, for the subset of speeches listed below
 # said file was then edited manually: font family was changed and encoding issues fixed
 
-
 # define set of speeches to highlight 
-highlight_speeches <- c(3875, # PNG 1996 - short negative statement
-                        5958, # VUT 2007 
-                        6373, 
-                        # 5868, # LAO 2007 - long positive statement
-                        6595, # EU  2011 - lowest polarity score
-                        7017  # KHM 2013 - highest polarity score
-                        )
+# highlight_speeches <- c(2682, # NOR 1989 - nunanced negative statement
+#                         3875, # PNG 1996 - short negative statement
+#                         5731, # SEN 2006 - positive statement
+#                         6595, # EU  2011 - lowest polarity score
+#                         7420  # LVA 2015 - mentions the Paris Agreement
+#                         )
 
 # generate .html with highlighted sentiment polarity + score
-climate_window %>%
-  filter(hit %in% c("match"), speech_id %in% highlight_speeches) %>%
-  left_join(maps::iso3166 %>% select(a3, ISOname) %>% distinct(), by = c("country" = "a3")) %>%
-  mutate(speech_id = paste(ISOname, year, sep = ", ")) %>%
-  mutate(sentences_split = get_sentences(sentence)) %$%
-  sentiment_by(sentences_split, by = list(speech_id), averaging.function = average_weighted_mixed_sentiment) %>%
-  highlight(file = "sentence_highlight.html", open = FALSE)
+# climate_window %>%
+#   filter(hit %in% c("match"), speech_id %in% highlight_speeches) %>%
+#   left_join(maps::iso3166 %>% select(a3, ISOname) %>% distinct(), by = c("country" = "a3")) %>%
+#   mutate(speech_id = paste(ISOname, year, sep = ", ")) %>%
+#   mutate(sentences_split = get_sentences(sentence)) %$%
+#   sentiment_by(sentences_split, by = list(speech_id), averaging.function = average_weighted_mixed_sentiment) %>%
+#   highlight(file = "sentence_highlight.html", open = FALSE)
 
 # take .png snapshot of the hmtl url (edited offline)
 # webshot::webshot(url = "sentence_highlight.html", file = "sentence_highlight.png", zoom = 2)
@@ -844,24 +842,20 @@ climate_window %>%
 
 **SentimentR**’s algorithm was thus employed at sentence level on the _window of interest_ of every speech. The overall polarity score of statements with more than one sentence enclosed in the _window of interest_ was computed as the average value assigned to each sentence. Five instances were chosen to portray the unbounded score attributed to the remarks concerning this topic, professed on five different sessions of the General Debate:
 
-* **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
-
-* **Maldives, 1998** : : a _negative_ statement, with an overall score of **-0.573** computed as the average sentiment polarity assigned to each of the four sentences that comprise the _window of interest_; 
-
-* **Tuvalu, 2002** : : a _negative_ statement, with an overall score of **-0.573** computed as the average sentiment polarity assigned to each of the four sentences that comprise the _window of interest_; 
-
-* **Marshall Islands, 2002** : : a _nuanced_ statement, scored as **-0.223**, in which the contribution of the _negative_ sentence overshadows that of the _positive_. The speaker reiterates that island nations such as the Marshall Islands face the _very threat of complete obliteration_, should the oceans rise by _even marginal levels_.;
-
-* **Timor-Leste, 2007** : :  a _nuanced_ statement, scored as **0.186**, in which the contribution of the _positive_ sentence overshadows that of the _negative_. While praising the ongoing negotiations and joint efforts to address the matter of climate change, the speaker emphasizes how developed countries in the northern hemisphere have damaged the _fragile ecosystems_ of the region.;
-
-* **Burkina Faso, 2010** : : most _positive_ statement on record, scored as **1.055**;
-
-* **Singapore, 2014** : : most _negative_ statement on record, scored as **-0.700**;
-
 ```{r sentimentr_render_highlight, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page"}
 # include the edited .png screenshot captured with sentiment_highlight
 knitr::include_graphics("sentence_highlight.png")
 ```
+
+* **Norway, 1998** : : a _negative_ statement, with an overall score of **-0.912** computed as the average sentiment polarity assigned to each of the two sentences that comprise the _window of interest_;
+
+* **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
+
+* **Senegal, 2006** : : a _positive_ statement, which mentions the _Kyoto Protocol_, upheld at the time;
+
+* **EU, 2011** : : the most _negative_ statement on record, scored as **-2.040**, where the contribution of the _negative_ setences largely overshadows that of the _positive_
+
+* **Latvia, 2015** : : _positive_ statement, scored as **0.714**, which mentions the notorious UN framework convertion held in Paris in 2015, where the _Paris Agreement_ was adopted by consensus;
 
 The process of computing the polarity score was extended to every statement concerning climate change, allowing for the sentiment expressed towards this topic over time to be quantified. The resulting scores are presented in the plot below, along with a smoothed curve that conveys the evolution of the average score per session of the UN General Debate.
 
