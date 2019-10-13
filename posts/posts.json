@@ -11,8 +11,10 @@
     ],
     "date": "2019-10-13",
     "categories": [],
-    "preview": {},
-    "last_modified": "2019-10-13T18:01:04+01:00"
+    "preview": "posts/2019-08-04-united-we-stand/images/preview.png",
+    "last_modified": "2019-10-13T18:08:00+01:00",
+    "preview_width": 1520,
+    "preview_height": 759
   },
   {
     "path": "posts/welcome/",
