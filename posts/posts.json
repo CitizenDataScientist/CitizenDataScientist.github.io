@@ -1,0 +1,32 @@
+[
+  {
+    "path": "posts/2019-08-04-united-we-stand/",
+    "title": "United we Stand?",
+    "description": "The hot topic of <strong>Climate Change<\/strong>, through the lens of the <strong>UN General Debate<\/strong>",
+    "author": [
+      {
+        "name": "Miguel Ramos Lopes",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2019-10-13",
+    "categories": [],
+    "preview": "posts/2019-08-04-united-we-stand/../../images/post1_preview.svg",
+    "last_modified": "2019-10-13T18:37:49+01:00"
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to Citizen Data Scientist",
+    "description": "Welcome to our new blog, Citizen Data Scientist. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2019-08-04",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-09-10T10:55:43+01:00"
+  }
+]
