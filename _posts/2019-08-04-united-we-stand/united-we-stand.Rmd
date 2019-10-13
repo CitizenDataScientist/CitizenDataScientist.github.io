@@ -5,8 +5,8 @@ description: |
 author:
   - name: Miguel Ramos Lopes 
     url: https://example.com/norajones
-base_url: "https://citizendatascientist.github.io/" 
-preview: "images/post1_united_we_stand_preview.svg"
+base_url: https://citizendatascientist.github.io/
+preview: images/post1_united_we_stand_preview.svg
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
