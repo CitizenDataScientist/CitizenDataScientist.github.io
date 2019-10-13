@@ -8,7 +8,11 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r profile_picture, echo=FALSE, fig.height=4, fig.width=4, warning=FALSE, dev='svg', fig.align='center'}
+# include the edited .png screenshot captured with sentiment_highlight
+knitr::include_graphics("images/profile.png")
+```
 
-Posts are written in [R Markdown](https://rmarkdown.rstudio.com/) and the website is built upon the [Distill R Markdown Framework](https://rstudio.github.io/distill/)(based on the web framework developed by the [Distill Machine Learning Journal](https://distill.pub/)).
+Posts are written in [R Markdown](https://rmarkdown.rstudio.com/) and the website is built upon the [Distill R Markdown Framework](https://rstudio.github.io/distill/) (based on the web framework developed by the [Distill Machine Learning Journal](https://distill.pub/)).
 
 My blog posts are released under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
