@@ -5,8 +5,8 @@ description: |
 author:
   - name: Miguel Ramos Lopes 
     url: https://example.com/norajones
-base_url: "https://github.com/CitizenDataScientist/CitizenDataScientist.github.io" 
-preview: "blob/master/images/post1_united_we_stand_preview.png"
+base_url: "https://citizendatascientist.github.io/" 
+preview: "images/post1_united_we_stand_preview.png"
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
@@ -592,7 +592,7 @@ Having plotted the mentions of climate change over time and interpreted the rela
 
 A tentative answer stemming from the scrutiny of the UN General Debate text corpus to this open-ended inquiry should consider the total number of mentions of climate change professed by each country over time, a metric presented in the plot below. It is important to underline that, while the number of mentions of climate change at the UN General Debate does not relay the full picture of a given country’s commitment to and involvement in tackling this challenge, it can certainly help to gauge the degree to which a nation is concerned about the topic.   
 
-```{r climate_change_dots, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page", preview=TRUE}
+```{r climate_change_dots, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page"}
 climate_change_mentions <- debates_bigrams_processed %>%
   # keep only mentions of "climate change"
   filter(str_detect(bigram, "^climate change$")) %>% 
