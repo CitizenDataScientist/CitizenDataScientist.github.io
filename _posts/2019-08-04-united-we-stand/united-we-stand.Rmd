@@ -896,7 +896,7 @@ climate_window_new %>%
   guides(fill = guide_legend(nrow = 1, override.aes = list(size = 5)))
 ```
 
-Each point, representing the score of a given country's statement on a given year, is colour-coded according to total number of mentions of climate change, introduced in previous visualizations. Every year a **polarizing array of statements is made**, with the resulting average yearly score being generally **marginally favourable** up until the **early 2000’s**, when it decayed slightly to a **neutral level**. The same data is depicted in the plot below, facetted by cluster of total mentions, in an attempt to assess if the trend exhibits meaningful differences on any specific group of countries.
+Each point, representing the score of a given country's statement on a given year, is colour-coded according to total number of mentions of climate change, introduced in previous visualizations. Every year a **polarizing array of statements is made**, with the resulting yearly average  score being  **marginally favourable** up until the **early 2000’s**, when it decayed slightly to a **neutral level**. The same data is depicted in the plot below, facetted by cluster of total mentions, in an attempt to assess if the trend exhibits meaningful differences on any specific group of countries.
 
 ```{r sentiment_polarity_cluster, echo=FALSE, fig.height=8, fig.width=16, message=FALSE, warning=FALSE, dev='svg', layout="l-page"}
 climate_window_new %>%
@@ -925,7 +925,7 @@ climate_window_new %>%
                      labels = c(str_replace_all(seq(min(climate_window_new$year), max(climate_window_new$year), 9), "^[0-9]{2}", "'"))) + 
   scale_y_continuous(breaks = seq(-2.5, 1.5, 0.5), limits = c(-2.51, 1.51), expand = c(0, 0)) +
   labs(title = "Sentiment towards Climate Change at the UN General Debate", 
-       subtitle = "smoothed trend lines suggest similar patterns across country-clusters",
+       subtitle = "smoothed trend lines suggest specific patterns across clusters",
        caption = "one dot represents a speech, coloured by total mentions of Climate Change per country",
        x = "", y = "Polarity Score",
        fill = "total mentions") + 
@@ -942,11 +942,11 @@ climate_window_new %>%
   guides(fill = guide_legend(nrow = 1, override.aes = list(size = 5, alpha = 1)))
 ```
 
-Although the overall sentiment is favourable, lines of best fit suggest that the trend is country-cluster dependent; it is noticeable that: 
+The following cluster-specific trends are noticeable: 
 
 * countries than refrain from addressing the topic (5 or fewer total mentions) do it in _lenient fashion_;
-* sentiment towards climate change for the majority of countries at the UN General Debate (ranging from 6 to 50 mentions of the topic) follows a similar trend, with a declining trend that has stabilized in recent years. Countries in this cluster also make the most _polarizing_ statements;
-* countries that recognize the relevance of the problem (having 51 to 100 total mentions) also issue _polarizing_ statements, having more pronounced trends than countires with fewer mentions of climate change;
+* sentiment towards climate change for the majority of countries at the UN General Debate (ranging from 6 to 50 mentions of the topic) follows a similar pattern, with a declining trend that has stabilized in recent years. Countries in this cluster make the most _polarizing_ statements;
+* countries that recognize the relevance of the problem (51 to 100 total mentions) also issue _polarizing_ statements, having more pronounced trends than countires with fewer mentions of climate change;
 * countries with the highest number of mentions (over 100) - despite exhibiting the most notorious negative trend - do not profess remarkably negative statements, as their sense of urgency towards the topic would lead us to believe;
 
 # Conslusion & Future Work
