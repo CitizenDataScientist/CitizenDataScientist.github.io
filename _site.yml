@@ -13,5 +13,5 @@ navbar:
 output: distill::distill_article
 collections:
   posts:
-    disqus: reproducible-finance-with-r
+    disqus: citizendatascientist
     share: [twitter, linkedin]
