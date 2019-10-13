@@ -3,6 +3,7 @@ title: "Citizen Data Scientist"
 description: |
   Citizen Data Scientist
 base_url: "https://CitizenDataScientist.github.io/"
+google_analytics: "UA-149861767-1"
 output_dir: "."
 navbar:
   right:
