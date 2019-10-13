@@ -2,17 +2,17 @@
   {
     "path": "posts/2019-08-04-united-we-stand/",
     "title": "United we Stand?",
-    "description": "The hot topic of <strong>Climate Change<\/strong>, through the lens of the **UN General Debate**",
+    "description": "The hot topic of <strong>Climate Change<\/strong>, through the lens of the <strong>UN General Debate<\/strong>",
     "author": [
       {
         "name": "Miguel Ramos Lopes",
         "url": "https://example.com/norajones"
       }
     ],
-    "date": "2019-10-08",
+    "date": "2019-10-13",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-10-08T22:27:14+01:00"
+    "last_modified": "2019-10-13T16:05:43+01:00"
   },
   {
     "path": "posts/welcome/",
@@ -27,6 +27,6 @@
     "date": "2019-08-04",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-08-11T19:26:53+01:00"
+    "last_modified": "2019-09-10T10:55:43+01:00"
   }
 ]

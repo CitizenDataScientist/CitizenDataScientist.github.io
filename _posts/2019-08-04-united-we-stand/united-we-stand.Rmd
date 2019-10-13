@@ -1,7 +1,7 @@
 ---
 title: "United we Stand?"
 description: |
- The hot topic of <strong>Climate Change</strong>, through the lens of the **UN General Debate**
+ The hot topic of <strong>Climate Change</strong>, through the lens of the <strong>UN General Debate</strong>
 author:
   - name: Miguel Ramos Lopes 
     url: https://example.com/norajones
@@ -590,7 +590,7 @@ Having plotted the mentions of climate change over time and interpreted the rela
 
 A tentative answer stemming from the scrutiny of the UN General Debate text corpus to this open-ended inquiry should consider the total number of mentions of climate change professed by each country over time, a metric presented in the plot below. It is important to underline that, while the number of mentions of climate change at the UN General Debate does not relay the full picture of a given country’s commitment to and involvement in tackling this challenge, it can certainly help to gauge the degree to which a nation is concerned about the topic.   
 
-```{r climate_change_dots, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page"}
+```{r climate_change_dots, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page", preview=TRUE}
 climate_change_mentions <- debates_bigrams_processed %>%
   # keep only mentions of "climate change"
   filter(str_detect(bigram, "^climate change$")) %>% 
@@ -840,22 +840,22 @@ climate_window_new <- climate_window %>%
 # webshot::webshot(url = "sentence_highlight.html", file = "sentence_highlight.png", zoom = 2)
 ```
 
-**SentimentR**’s algorithm was thus employed at sentence level on the _window of interest_ of every speech. The overall polarity score of statements with more than one sentence enclosed in the _window of interest_ was computed as the average value assigned to each sentence. Five instances were chosen to portray the unbounded score attributed to the remarks concerning this topic, professed on five different sessions of the General Debate:
+**SentimentR**’s algorithm was thus employed at sentence level on the _window of interest_ of every speech. For statements with more than one sentence enclosed in the _window of interest_ the overall polarity score was computed as the average value assigned to each sentence. Five instances were chosen to portray the unbounded score attributed to the remarks concerning this topic, professed on five different sessions of the General Debate:
 
-```{r sentimentr_render_highlight, echo=FALSE, fig.height=8, fig.width=16, warning=FALSE, dev='svg', layout="l-page"}
+```{r sentimentr_render_highlight, echo=FALSE, fig.height=8, fig.width=14, warning=FALSE, dev='svg', layout="l-page"}
 # include the edited .png screenshot captured with sentiment_highlight
 knitr::include_graphics("sentence_highlight.png")
 ```
 
-* **Norway, 1998** : : a _negative_ statement, with an overall score of **-0.912** computed as the average sentiment polarity assigned to each of the two sentences that comprise the _window of interest_;
+* <p style="text-align:left;"> **Norway, 1998** : : a _negative_ statement, with an overall score of **-0.912** computed as the average sentiment polarity assigned to each of the two sentences that comprise the _window of interest_; </p>
 
-* **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
+* <p style="text-align:left;"> **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific; </p>
 
-* **Senegal, 2006** : : a _positive_ statement, which mentions the _Kyoto Protocol_, upheld at the time;
+* <p style="text-align:left;"> **Senegal, 2006** : : a _positive_ statement, which mentions the _Kyoto Protocol_, upheld at the time; </p>
 
-* **EU, 2011** : : the most _negative_ statement on record, scored as **-2.040**, where the contribution of the _negative_ setences largely overshadows that of the _positive_
+* <p style="text-align:left;"> **EU, 2011** : : the most _negative_ statement on record, scored as **-2.040**, where the contribution of the _negative_ setences largely overshadows that of the _positive_ </p>
 
-* **Latvia, 2015** : : _positive_ statement, scored as **0.714**, which mentions the notorious UN framework convertion held in Paris in 2015, where the _Paris Agreement_ was adopted by consensus;
+* <p style="text-align:left;"> **Latvia, 2015** : : _positive_ statement, scored as **0.714**, which mentions the notorious UN Framework Convention held in Paris in 2015, where the _Paris Agreement_ was adopted by consensus; </p>
 
 The process of computing the polarity score was extended to every statement concerning climate change, allowing for the sentiment expressed towards this topic over time to be quantified. The resulting scores are presented in the plot below, along with a smoothed curve that conveys the evolution of the average score per session of the UN General Debate.
 
@@ -894,7 +894,7 @@ climate_window_new %>%
   guides(fill = guide_legend(nrow = 1, override.aes = list(size = 5)))
 ```
 
-Each point, representing the score of a given country's statement on a given year, is colour-coded according to total number of mentions of climate change, introduced in previous visualizations. Every year a polarizing array of statements is made, with the resulting average yearly score being generally **favourable** and **stable**. The same data is depicted in the plot below, facetted by cluster of total mentions, in an attempt to assess if the trend exhibits meaningful differences on any specific group of countries.
+Each point, representing the score of a given country's statement on a given year, is colour-coded according to total number of mentions of climate change, introduced in previous visualizations. Every year a **polarizing array of statements is made**, with the resulting average yearly score being generally **marginally favourable** up until the **early 2000’s**, when it decayed slightly to a **neutral level**. The same data is depicted in the plot below, facetted by cluster of total mentions, in an attempt to assess if the trend exhibits meaningful differences on any specific group of countries.
 
 ```{r sentiment_polarity_cluster, echo=FALSE, fig.height=8, fig.width=16, message=FALSE, warning=FALSE, dev='svg', layout="l-page"}
 climate_window_new %>%
@@ -942,7 +942,9 @@ climate_window_new %>%
 
 Although the overall sentiment is favourable, lines of best fit suggest that the trend is country-cluster dependent; it is noticeable that: 
 
-* countries than refrain from addressing the topic (5 or less total mentions) do it in _lenient fashion_;
-* sentiment towards climate change for the majority of countries at the UN General Debate (ranging from 6 to 50 mentions of the topic) remains positive on average, but with declining trend. Countries in this cluster also make the most _polarizing_ statements;
-* countries that recognize the relevance of the problem (having 51 to 100 total mentions) also issue _polarizing_ statements, but with less pronounced trends;
-* countries with the highest number of mentions (over 100) - despite exhibiting a negative sentiment trend - remain favourable and do not profess remarkably negative statements, as their sense of urgency towards the topic would lead us to believe;
+* countries than refrain from addressing the topic (5 or fewer total mentions) do it in _lenient fashion_;
+* sentiment towards climate change for the majority of countries at the UN General Debate (ranging from 6 to 50 mentions of the topic) follows a similar trend, with a declining trend that has stabilized in recent years. Countries in this cluster also make the most _polarizing_ statements;
+* countries that recognize the relevance of the problem (having 51 to 100 total mentions) also issue _polarizing_ statements, having more pronounced trends than countires with fewer mentions of climate change;
+* countries with the highest number of mentions (over 100) - despite exhibiting the most notorious negative trend - do not profess remarkably negative statements, as their sense of urgency towards the topic would lead us to believe;
+
+# Conslusion & Future Work
