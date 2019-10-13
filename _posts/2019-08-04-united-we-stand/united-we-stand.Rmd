@@ -6,10 +6,11 @@ author:
   - name: Miguel Ramos Lopes 
     url: https://example.com/norajones
 base_url: https://citizendatascientist.github.io
-preview: images/preview.png
+preview: images/post1_preview.svg
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
+    self_contained: false
     css: style.css
 bibliography: biblio_un_debates.bib
 editor_options: 
