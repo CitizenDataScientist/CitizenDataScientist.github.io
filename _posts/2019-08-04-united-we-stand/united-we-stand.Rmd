@@ -954,7 +954,7 @@ The following cluster-specific trends are noticeable:
 This blogpost focused on the topic of climate change at the United Nations General Debate, covering the period from 1970 to 2015. Three research questions were answered through the analysis of the text corpus, establishing that:
 
 * The **prevalence of the topic as changed drastically over time**, from the first mention professed in 1988 to being deemed the core theme of a debate session in 2007;
-* Under the premise that the number of mentions of the topic is correlated with the degree of urgency a given country awards to climate change, **nations of the world are dissonant** – the numerous appeals made by endangered island nations are in **stark contrast** with the passive stance of countries like Saudi Arabia and Iran;
+* Under the premise that the number of mentions of the topic is correlated with the degree of urgency a given country awards to climate change, **nations of the world are dissonant**. The numerous appeals made by endangered island nations are in **stark contrast** with the passive stance of countries like Saudi Arabia and Iran;
 * The average **sentiment polarity** towards climate change has **declined** from marginally positive to neutral; every year a polarizing array of statements is made, with **grave concerns** being **intertwined** with calls for **cooperation and commitment** to Sustainable Development Goals; 
 
 Whilst the world appeared to be fragmented in 2015, a greater convergence is expected by the 2020. 
