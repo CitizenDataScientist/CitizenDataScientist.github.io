@@ -851,7 +851,7 @@ knitr::include_graphics("sentence_highlight.png")
 
 * **Papua New Guinea, 1996** : : a _negative_ statement scored as **-0.498**, which mentions the _risk of extinction_ faced by island-countries in the south-western Pacific;
 
-* **Senegal, 2006** : : a _positive_ statement, which mentions the _Kyoto Protocol_, upheld at the time;
+* **Senegal, 2006** : : a _positive_ statement mentioning the _Kyoto Protocol_, upheld at the time;
 
 * **EU, 2011** : : the most _negative_ statement on record, scored as **-2.040**, where the contribution of the _negative_ setences largely overshadows that of the _positive_
 
