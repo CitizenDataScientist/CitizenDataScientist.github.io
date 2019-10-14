@@ -4,7 +4,7 @@ description: |
  The hot topic of <strong>Climate Change</strong>, through the lens of the <strong>UN General Debate</strong>
 author:
   - name: Miguel Ramos Lopes
-    url: https://example.com/norajones
+    url: https://www.linkedin.com/in/miguelrlopes/
 base_url: https://citizendatascientist.github.io
 preview: ../../images/post1_preview.svg
 date: "`r Sys.Date()`"

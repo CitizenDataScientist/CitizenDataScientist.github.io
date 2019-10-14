@@ -9,10 +9,10 @@
         "url": "https://example.com/norajones"
       }
     ],
-    "date": "2019-10-13",
+    "date": "2019-10-14",
     "categories": [],
     "preview": "posts/2019-08-04-united-we-stand/../../images/post1_preview.svg",
-    "last_modified": "2019-10-13T21:09:50+01:00"
+    "last_modified": "2019-10-14T23:21:03+01:00"
   },
   {
     "path": "posts/welcome/",
@@ -27,6 +27,6 @@
     "date": "2019-08-04",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-09-10T10:55:43+01:00"
+    "last_modified": "2019-08-11T19:26:53+01:00"
   }
 ]
