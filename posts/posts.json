@@ -1,20 +1,5 @@
 [
   {
-    "path": "posts/welcome/",
-    "title": "Hello World",
-    "description": "Welcome to Citizen Data Scientist!",
-    "author": [
-      {
-        "name": "Miguel Ramos Lopes",
-        "url": "https://www.linkedin.com/in/miguelrlopes/"
-      }
-    ],
-    "date": "2019-10-17",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2019-10-18T00:01:05+01:00"
-  },
-  {
     "path": "posts/2019-08-04-united-we-stand/",
     "title": "United we Stand?",
     "description": "The hot topic of Climate Change, through the lens of the UN General Debate",
@@ -29,6 +14,21 @@
       "Longform"
     ],
     "preview": "posts/2019-08-04-united-we-stand/../../images/post1_preview.svg",
-    "last_modified": "2019-10-18T00:26:52+01:00"
+    "last_modified": "2019-10-18T00:27:00+01:00"
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Hello World",
+    "description": "Welcome to Citizen Data Scientist!",
+    "author": [
+      {
+        "name": "Miguel Ramos Lopes",
+        "url": "https://www.linkedin.com/in/miguelrlopes/"
+      }
+    ],
+    "date": "2019-10-17",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-10-18T00:01:05+01:00"
   }
 ]

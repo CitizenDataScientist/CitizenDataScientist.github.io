@@ -9,21 +9,21 @@
     <generator>Distill</generator>
     <lastBuildDate>Thu, 17 Oct 2019 00:00:00 +0000</lastBuildDate>
     <item>
+      <title>United we Stand?</title>
+      <dc:creator>Miguel Ramos Lopes</dc:creator>
+      <link>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</link>
+      <description>The hot topic of Climate Change, through the lens of the UN General Debate</description>
+      <guid>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</guid>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand/../../images/post1_preview.svg" medium="image" type="image/svg+xml"/>
+    </item>
+    <item>
       <title>Hello World</title>
       <dc:creator>Miguel Ramos Lopes</dc:creator>
       <link>https://citizendatascientist.github.io/posts/welcome</link>
       <description>Welcome to Citizen Data Scientist!</description>
       <guid>https://citizendatascientist.github.io/posts/welcome</guid>
       <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>United we Stand?</title>
-      <dc:creator>Miguel Ramos Lopes</dc:creator>
-      <link>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</link>
-      <description>The hot topic of Climate Change, through the lens of the UN General Debate</description>
-      <guid>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</guid>
-      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
-      <media:content url="https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand/../../images/post1_preview.svg" medium="image" type="image/svg+xml"/>
     </item>
   </channel>
 </rss>
