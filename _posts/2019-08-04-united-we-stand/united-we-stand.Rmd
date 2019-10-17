@@ -1,7 +1,7 @@
 ---
 title: "United we Stand?"
 description: |
- The hot topic of <strong>Climate Change</strong>, through the lens of the <strong>UN General Debate</strong>
+ The hot topic of Climate Change, through the lens of the UN General Debate
 author:
   - name: Miguel Ramos Lopes
     url: https://www.linkedin.com/in/miguelrlopes/
@@ -320,25 +320,25 @@ Thus far, the focus has been on purely quantitative metrics that translate how t
 The first step in exploring the lexicon of the dataset is listing the most mentioned words across the considered time period. A routine pre-processing step in text analytics when conducting word frequency count is to remove _stopwords_, i.e. notoriously common words with low significance – such as “the”, “of” and “to”. The graph below shows the top 20 most prominent words found in the General Debate text corpus from 1970 to 2015, having removed _stopwords_ following the tidy approach detailed in [@silge2016tidytext].
 
 ```{r remove_stopwords, include=FALSE}
-# debates_words_processed <- debates_words %>%
-#   # drop the 'speech' column from the working dataset
-#   select(-speech) %>%
-#   # remove all leading and trailing numbers attached to tokens
-#   mutate(word = str_remove(word, regex('^[:digit:]+|[:digit:]+$'))) %>%
-#   # remove tokens with 3 or more repeated letters
-#   filter(!str_detect(word, "(.)\\1{2,}")) %>%
-#   # remove any remaining single letter tokens
-#   filter(!str_detect(word, pattern = "\\b(.)\\b")) %>%
-#   # keep only tokens that contain letters
-#   mutate(word = str_extract(word, "[a-z]+")) %>%
-#   # remove empty tokens
-#   filter(!word == "") %>%
-#   # remove stop words
-#   anti_join(stop_words)
-#
+debates_words_processed <- debates_words %>%
+  # drop the 'speech' column from the working dataset
+  select(-speech) %>%
+  # remove all leading and trailing numbers attached to tokens
+  mutate(word = str_remove(word, regex('^[:digit:]+|[:digit:]+$'))) %>%
+  # remove tokens with 3 or more repeated letters
+  filter(!str_detect(word, "(.)\\1{2,}")) %>%
+  # remove any remaining single letter tokens
+  filter(!str_detect(word, pattern = "\\b(.)\\b")) %>%
+  # keep only tokens that contain letters
+  mutate(word = str_extract(word, "[a-z]+")) %>%
+  # remove empty tokens
+  filter(!word == "") %>%
+  # remove stop words
+  anti_join(stop_words)
+
 # save(debates_words_processed, file = "debates_words_processed.RData")
 
-load("debates_words_processed.RData")
+# load("debates_words_processed.RData")
 ```
 
 ```{r top_words, echo=FALSE, fig.height=8, fig.width=16, dev='svg', layout="l-page"}
@@ -375,36 +375,35 @@ debates_words_processed %>%
 As expected, the list is dominated by words that are transversal to most speeches, such as “nations”, “united”, “international”, “world” and “countries”. These words, along with “assembly” and "session" (ranked #21) provide little context to the analysis, as they are featured in most opening statements and closing remarks; they are **inconsequential** and should, by extension, be treated as _stopwords_ in this context. Words highlighted as **meaningful**, however, convey the first qualitative insights into the most prominent topics discussed at the UN General Debate. “Peace” emerges ahead of “development”, “security” and “economic”, suggesting that the main purpose of the organization - _to maintain international peace and security_, consecrated in the Article 1^[full charter available on this link: https://www.un.org/en/sections/un-charter/chapter-i/index.html] - is reflected in the content of the debate.
 
 ```{r process_bigrams, include=FALSE}
-# debates_bigrams <- debates %>%
-#   unnest_tokens(bigram, speech, drop = FALSE, token = "ngrams", n = 2)
-#
-# debates_bigrams_processed <- debates_bigrams %>%
-#   # drop the 'speech' column from the working dataset
-#   select(-speech) %>%
-#   # remove bigrams with non-ASCII characters
-#   filter(stri_enc_isascii(bigram)) %>%
-#   # remove all commas from the existing bigrams
-#   mutate(bigram = str_remove_all(bigram, "\\,")) %>%
-#   # remove tokens with 3 or more repeated letters
-#   filter(!str_detect(bigram, "(.)\\1{2,}")) %>%
-#   # remove empty tokens
-#   filter(!bigram == "") %>%
-#   # remove all remaining tokens with numbers from the dataset
-#   filter(!str_detect(bigram, '[:digit:]')) %>%
-#   # remove tokens with special characters
-#   filter(!str_detect(bigram, "[:punct:]")) %>%
-#
-#   # split bigrams into two words
-#   separate(bigram, into = c("word_1", "word_2"), remove = FALSE, sep = " ") %>%
-#   # remove bigrams...
-#   anti_join(stop_words, by = c("word_1" = "word")) %>% # ... with leading stop-word
-#   anti_join(stop_words, by = c("word_2" = "word")) %>% # ... with trailing stop-word
-#   # re-unite bigrams
-#   unite(c("word_1", "word_2"), col = bigram, sep = " ")
-#
+debates_bigrams <- debates %>%
+  unnest_tokens(bigram, speech, drop = FALSE, token = "ngrams", n = 2)
+
+debates_bigrams_processed <- debates_bigrams %>%
+  # drop the 'speech' column from the working dataset
+  select(-speech) %>%
+  # remove bigrams with non-ASCII characters
+  filter(stri_enc_isascii(bigram)) %>%
+  # remove all commas from the existing bigrams
+  mutate(bigram = str_remove_all(bigram, "\\,")) %>%
+  # remove tokens with 3 or more repeated letters
+  filter(!str_detect(bigram, "(.)\\1{2,}")) %>%
+  # remove empty tokens
+  filter(!bigram == "") %>%
+  # remove all remaining tokens with numbers from the dataset
+  filter(!str_detect(bigram, '[:digit:]')) %>%
+  # remove tokens with special characters
+  filter(!str_detect(bigram, "[:punct:]")) %>%
+  # split bigrams into two words
+  separate(bigram, into = c("word_1", "word_2"), remove = FALSE, sep = " ") %>%
+  # remove bigrams...
+  anti_join(stop_words, by = c("word_1" = "word")) %>% # ... with leading stop-word
+  anti_join(stop_words, by = c("word_2" = "word")) %>% # ... with trailing stop-word
+  # re-unite bigrams
+  unite(c("word_1", "word_2"), col = bigram, sep = " ")
+
 # save(debates_bigrams_processed, file = "debates_bigrams_processed.RData")
 
-load("debates_bigrams_processed.RData")
+# load("debates_bigrams_processed.RData")
 ```
 
 In the quest to unravel the topics that dominated the UN General Debate sessions through the years it is preferable to focus on decades rather than performing the word count exercise with increased granularity at year level. The decision to aggregate the data by ten-year periods (five, in the case of the 2010s) allows the reader to ascertain which affairs warranted prolonged discussion at the General Assembly and thus truly shaped foreign policy discussion at a time scale relatable to man, the _decade_. However, single word frequency count at decade level is likely to yield similar results to those observed for the complete time period enclosed in the dataset. In the field of text mining and analytics it is common practice to extend the _tokenization_ process beyond single words, to entities known as _n-grams_; in this case, greater insights into the actual topics and events can be gathered by exploring the occurrence of prominent word pairs, or _bigrams_. Similarly to single-word tokens, bigrams containing stopwords (including those labelled as “inconsequential”) were excluded from the dataset.
