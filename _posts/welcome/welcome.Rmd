@@ -12,7 +12,7 @@ output:
     css: ../../style_posts.css
 ---
 
-```{r load packages, include=FALSE}
+```{r load packages, warning=FALSE, include=FALSE}
 library(lubridate)
 ```
 

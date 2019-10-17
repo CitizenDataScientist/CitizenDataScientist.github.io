@@ -10,9 +10,11 @@
       }
     ],
     "date": "2019-10-17",
-    "categories": [],
+    "categories": [
+      "Longform"
+    ],
     "preview": "posts/2019-08-04-united-we-stand/../../images/post1_preview.svg",
-    "last_modified": "2019-10-17T23:34:02+01:00"
+    "last_modified": "2019-10-17T23:47:46+01:00"
   },
   {
     "path": "posts/welcome/",
@@ -27,6 +29,6 @@
     "date": "2019-10-17",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-10-17T23:26:19+01:00"
+    "last_modified": "2019-10-18T00:01:05+01:00"
   }
 ]
