@@ -9,24 +9,24 @@
         "url": "https://www.linkedin.com/in/miguelrlopes/"
       }
     ],
-    "date": "2019-10-15",
+    "date": "2019-10-17",
     "categories": [],
     "preview": "posts/2019-08-04-united-we-stand/../../images/post1_preview.svg",
-    "last_modified": "2019-10-15T19:49:47+01:00"
+    "last_modified": "2019-10-17T23:34:02+01:00"
   },
   {
     "path": "posts/welcome/",
-    "title": "Welcome to Citizen Data Scientist",
-    "description": "Welcome to our new blog, Citizen Data Scientist. We hope you enjoy \nreading what we have to say!",
+    "title": "Hello World",
+    "description": "Welcome to Citizen Data Scientist!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Miguel Ramos Lopes",
+        "url": "https://www.linkedin.com/in/miguelrlopes/"
       }
     ],
-    "date": "2019-08-04",
+    "date": "2019-10-17",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-08-11T19:26:53+01:00"
+    "last_modified": "2019-10-17T23:26:19+01:00"
   }
 ]

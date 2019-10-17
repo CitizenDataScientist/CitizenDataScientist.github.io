@@ -2,7 +2,7 @@ name: "CDS"
 title: "Citizen Data Scientist"
 description: |
   Citizen Data Scientist
-base_url: "https://CitizenDataScientist.github.io/"
+base_url: https://citizendatascientist.github.io
 google_analytics: "UA-149861767-1"
 output_dir: "."
 navbar:
@@ -11,6 +11,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fa fa-rss
+        href: index.xml
 output: distill::distill_article
 collections:
   posts:

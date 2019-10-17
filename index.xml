@@ -2,29 +2,28 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Citizen Data Scientist</title>
-    <link>https://CitizenDataScientist.github.io/</link>
-    <atom:link href="https://CitizenDataScientist.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <link>https://citizendatascientist.github.io</link>
+    <atom:link href="https://citizendatascientist.github.io/index.xml" rel="self" type="application/rss+xml"/>
     <description>Citizen Data Scientist
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 14 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 00:00:00 +0000</lastBuildDate>
     <item>
       <title>United we Stand?</title>
       <dc:creator>Miguel Ramos Lopes</dc:creator>
-      <link>https://CitizenDataScientist.github.io/posts/2019-08-04-united-we-stand</link>
+      <link>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</link>
       <description>The hot topic of Climate Change, through the lens of the UN General Debate</description>
-      <guid>https://CitizenDataScientist.github.io/posts/2019-08-04-united-we-stand</guid>
-      <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
-      <media:content url="https://CitizenDataScientist.github.io/posts/2019-08-04-united-we-stand/../../images/post1_preview.svg" medium="image" type="image/svg+xml"/>
+      <guid>https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand</guid>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://citizendatascientist.github.io/posts/2019-08-04-united-we-stand/../../images/post1_preview.svg" medium="image" type="image/svg+xml"/>
     </item>
     <item>
-      <title>Welcome to Citizen Data Scientist</title>
-      <dc:creator>Nora Jones</dc:creator>
-      <link>https://CitizenDataScientist.github.io/posts/welcome</link>
-      <description>Welcome to our new blog, Citizen Data Scientist. We hope you enjoy 
-reading what we have to say!</description>
-      <guid>https://CitizenDataScientist.github.io/posts/welcome</guid>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      <title>Hello World</title>
+      <dc:creator>Miguel Ramos Lopes</dc:creator>
+      <link>https://citizendatascientist.github.io/posts/welcome</link>
+      <description>Welcome to Citizen Data Scientist!</description>
+      <guid>https://citizendatascientist.github.io/posts/welcome</guid>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
