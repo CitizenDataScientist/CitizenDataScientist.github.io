@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::include_graphics("images/profile.png")
 ```
 
-I'm Miguel, a `r floor(interval(ymd("1993-06-08"), today()) / years(1))`-year-old Mechanical Engineer with a strong passion for data analytics and visualization, process modeling and simulation. If you want to more about myself and the motivation that led me to start this blog please check out my [Hello World](https://citizendatascientist.github.io/posts/welcome/) welcome post.
+I'm Miguel, a `r floor(interval(ymd("1993-06-08"), today()) / years(1))`-year-old Mechanical Engineer with a strong passion for data analytics and visualization, process modeling and simulation. If you want to know more about myself and the motivation that led me to start this blog please check out my [Hello World](https://citizendatascientist.github.io/posts/welcome/) welcome post.
 
 ### Acknowledgements 
 
