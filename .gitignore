@@ -38,7 +38,13 @@ rsconnect/
 # csv files
 *.csv
 
+# tsv files
+*.tsv
+
 # superfluous files
 /_posts/
 /posts/
 #/site_libs/
+
+# API Keys
+/apikeys/
